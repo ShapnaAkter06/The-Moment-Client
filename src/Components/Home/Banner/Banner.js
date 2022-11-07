@@ -16,19 +16,19 @@ const Banner = () => {
             </button>
             <div className="flex items-center justify-start w-full h-full gap-6 py-4 mx-auto overflow-auto lg:gap-8">
                 <div className="relative flex flex-shrink-0 w-full sm:w-auto">
-                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image1} alt="Image 1" />
+                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image1} alt="" />
                 </div>
                 <div className="relative flex flex-shrink-0 w-full sm:w-auto">
-                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image2} alt="Image 2" />
+                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image2} alt="" />
                 </div>
                 <div className="relative flex flex-shrink-0 w-full sm:w-auto">
-                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image3} alt="Image 3" />
+                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image3} alt="" />
                 </div>
                 <div className="relative flex flex-shrink-0 w-full sm:w-auto">
-                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image4} alt="Image 4" />
+                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image4} alt="" />
                 </div>
                 <div className="relative flex flex-shrink-0 w-full sm:w-auto">
-                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image5} alt="Image 5" />
+                    <img className="object-cover object-center h-96 aspect-square dark:bg-gray-500" src={image5} alt="" />
                 </div>
             </div>
             <button aria-label="Slide forward" id="next" className="absolute right-0 z-30 p-2 mr-10 focus:outline-none focus:dark:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400">
