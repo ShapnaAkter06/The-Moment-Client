@@ -40,7 +40,7 @@ const Review = ({setRender,name}) => {
     return (
         <div>
             <form onSubmit={handleReview}>
-                <div className='grid grid-cols-1 gap-4 mb-12 mx-auto w-1/2'>
+                <div className='grid grid-cols-1 gap-4 my-12 mx-auto w-1/2'>
                     <h2 className='text-2xl font-bold text-center'>Add Review Here</h2>
                     <input name='name' type="text" placeholder="Full Name" className="input input-bordered input-primary " />
                     <input name='email' type="text" placeholder="User Email" className="input input-bordered input-primary" defaultValue={user?.email} />

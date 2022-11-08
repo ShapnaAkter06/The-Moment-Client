@@ -2,10 +2,9 @@ import React from 'react';
 
 const ReviewRow = ({ review }) => {
     const { customer, email, message, name } = review;
-    console.log(review);
+    // console.log(review);
     return (
         <tr>
-
             <td>
                 {customer}
             </td>
@@ -18,11 +17,6 @@ const ReviewRow = ({ review }) => {
             <td>
                 {message}
             </td>
-            {/* <td>
-                <button onClick={()=> handleDelete(_id)}>
-                <img className='w-8' src={eraseBtn} alt="" />
-                </button>
-            </td> */}
         </tr>
     );
 };

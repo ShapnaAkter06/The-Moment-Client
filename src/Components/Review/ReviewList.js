@@ -22,15 +22,14 @@ const ReviewList = ({render,name}) => {
     return (
         <div>
             <div className="overflow-x-auto w-full">
-                <h2 className='text-4xl mb-12 text-center'>Review on my Work</h2>
-                <table className="table w-4/5 mx-auto">
+                <h2 className='text-4xl mb-5 text-center'>Review on my Work</h2>
+                <table className="table mx-auto w-1/2 text-center">
                     <thead>
                         <tr>
                             <th>Name</th>
                             <th>Email ID</th>
                             <th>Service name</th>
                             <th>Message</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,7 +37,6 @@ const ReviewList = ({render,name}) => {
                             reviews.map(review => <ReviewRow
                                 key={review._id}
                                 review={review}
-                            // handleDelete={handleDelete}
                             ></ReviewRow>)
                         }
                     </tbody>
