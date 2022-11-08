@@ -2,15 +2,22 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import ReviewRow from './ReviewRow';
 
-const ReviewList = () => {
+const ReviewList = ({render,name}) => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
+    console.log(reviews);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${user?.email}`)
+        fetch(`http://localhost:5000/reviews?email=${name}`)
             .then(response => response.json())
             .then(data => setReviews(data))
-    }, [user?.email])
+    }, [user?.email, render])
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/myReviews?email=${user?.email}`)
+    //         .then(response => response.json())
+    //         .then(data => setReviews(data))
+    // }, [user?.email, render])
 
     return (
         <div>

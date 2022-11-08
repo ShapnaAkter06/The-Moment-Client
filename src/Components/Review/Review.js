@@ -1,18 +1,19 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
-const Review = () => {
+const Review = ({setRender,name}) => {
     const { user } = useContext(AuthContext);
 
     const handleReview = (event) => {
         event.preventDefault();
         const form = event.target;
-        const name = form.name.value;
+        const username = form.name.value;
         const email = user?.email || 'unregistered';
         const message = form.message.value;
 
         const review = {
-            customer: name,
+            name,
+            customer: username,
             email,
             message,
         }
@@ -27,6 +28,7 @@ const Review = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
+                setRender((render)=> !render)
                 if (data.acknowledged) {
                     alert('Review successfully');
                     form.reset('')

@@ -13,7 +13,7 @@ const HomeService = () => {
     return (
         <div className='mb-12'>
             <div className='text-center mb-4'>
-                <p className="text-4xl font-bold text-orange-600">Services</p>
+                <p className="text-4xl font-bold text-orange-600">My Services</p>
             </div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-4 mx-12'>
                 {

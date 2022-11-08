@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Review from '../Review/Review';
 import ReviewList from '../Review/ReviewList';
 
 const ServiceDetails = () => {
-    const { image, name, price, description } = useLoaderData()
+    const { image, name, price, description } = useLoaderData();
+    const [render, setRender] = useState(true);
+    // console.log(render);
     return (
         <section className="dark:bg-gray-800 dark:text-gray-100">
             <div className="container flex flex-col-reverse mx-auto lg:flex-row">
@@ -33,8 +35,8 @@ const ServiceDetails = () => {
                     </div>
                 </div>
             </div>
-            <ReviewList></ReviewList>
-            <Review></Review>
+            <ReviewList name={name} render={render}></ReviewList>
+            <Review name={name} setRender={setRender}></Review>
         </section>
     );
 };
