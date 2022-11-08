@@ -22,7 +22,7 @@ const ReviewList = ({render,name}) => {
     return (
         <div>
             <div className="overflow-x-auto w-full">
-                <h2 className='text-4xl mb-5 text-center'>Review on my Work</h2>
+                <h2 className='text-2xl font-bold text-center mb-5'>Review on my Work</h2>
                 <table className="table mx-auto w-1/2 text-center">
                     <thead>
                         <tr>
