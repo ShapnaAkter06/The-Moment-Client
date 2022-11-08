@@ -11,21 +11,21 @@ const Login = () => {
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <h1 className="text-5xl font-bold text-center py-5">Login</h1>
-                    <div className="card-body">
-                        <div className="form-control">
+                    <form className="card-body">
+                    <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered" />
+                            <input type="text" placeholder="email" name='email' className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" placeholder="password" className="input input-bordered" />
+                            <input type="password" placeholder="password" name='password' className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <input className='btn btn-primary' type="submit" value="Login" />
                         </div>
                         <div className='flex justify-center'>
                             <button aria-label="Login with Google" type="button" className="flex items-center justify-center p-4 w-full space-x-4 border rounded-2xl focus:ring-2 focus:ring-offset-1 border-gray-600 mt-4 focus:ring-violet-400">
@@ -38,7 +38,7 @@ const Login = () => {
                         <p className="text-xs text-center sm:px-6 dark:text-gray-400">Don't have an account?
                             <Link to='/signup' className="underline text-blue-700 font-bold"> Sign Up</Link>
                         </p>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
