@@ -13,12 +13,6 @@ const ReviewList = ({render,name}) => {
             .then(data => setReviews(data))
     }, [user?.email, render])
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:5000/myReviews?email=${user?.email}`)
-    //         .then(response => response.json())
-    //         .then(data => setReviews(data))
-    // }, [user?.email, render])
-
     return (
         <div>
             <div className="overflow-x-auto w-full">
