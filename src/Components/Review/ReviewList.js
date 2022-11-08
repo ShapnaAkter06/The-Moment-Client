@@ -14,10 +14,9 @@ const ReviewList = () => {
 
     return (
         <div>
-            <h2 className='text-4xl my-12 text-center'>Review on my Work</h2>
             <div className="overflow-x-auto w-full">
-                <table className="table w-full">
-
+                <h2 className='text-4xl mb-12 text-center'>Review on my Work</h2>
+                <table className="table w-4/5 mx-auto">
                     <thead>
                         <tr>
                             <th>Name</th>
@@ -31,11 +30,10 @@ const ReviewList = () => {
                             reviews.map(review => <ReviewRow
                                 key={review._id}
                                 review={review}
-                                // handleDelete={handleDelete}
+                            // handleDelete={handleDelete}
                             ></ReviewRow>)
                         }
                     </tbody>
-
                 </table>
             </div>
         </div>
