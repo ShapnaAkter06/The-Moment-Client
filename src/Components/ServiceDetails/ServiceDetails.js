@@ -4,7 +4,7 @@ import Review from '../Review/Review';
 import ReviewList from '../Review/ReviewList';
 
 const ServiceDetails = () => {
-    const { image, name, price, description } = useLoaderData();
+    const { image, name, price, description} = useLoaderData();
     const [render, setRender] = useState(true);
     // console.log(render);
     return (

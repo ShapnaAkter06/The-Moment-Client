@@ -5,7 +5,7 @@ import ReviewRow from './ReviewRow';
 const ReviewList = ({render,name}) => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
-    console.log(reviews);
+    // console.log(reviews);
 
     useEffect(() => {
         fetch(`http://localhost:5000/reviews?email=${name}`)
@@ -28,6 +28,7 @@ const ReviewList = ({render,name}) => {
                         <tr>
                             <th>Name</th>
                             <th>Email ID</th>
+                            <th>Service name</th>
                             <th>Message</th>
                             <th></th>
                         </tr>

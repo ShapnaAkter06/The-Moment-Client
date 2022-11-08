@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ReviewRow = ({ review }) => {
-    const { customer, email, message } = review;
+    const { customer, email, message, name } = review;
     console.log(review);
     return (
         <tr>
@@ -11,6 +11,9 @@ const ReviewRow = ({ review }) => {
             </td>
             <td>
                 {email}
+            </td>
+            <td>
+                {name}
             </td>
             <td>
                 {message}
