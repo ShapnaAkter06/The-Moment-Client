@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
@@ -33,7 +34,7 @@ const Review = ({ setRender, name }) => {
                 console.log(data)
                 setRender((render) => !render)
                 if (data.acknowledged) {
-                    alert('Review successfully');
+                    toast.success('Review successfully');
                     form.reset('')
                 }
             })
