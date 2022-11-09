@@ -10,7 +10,7 @@ const MyReviews = () => {
         fetch(`http://localhost:5000/myReviews?email=${user?.email}`)
             .then(response => response.json())
             .then(data => setMyReviews(data))
-    }, [])
+    }, [myReviews])
 
     // for delete
     const handleDelete = id => {
