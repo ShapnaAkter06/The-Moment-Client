@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 import Review from '../Review/Review';
 import ReviewList from '../Review/ReviewList';
 
 const ServiceDetails = () => {
     const { image, name, price, description} = useLoaderData();
     const [render, setRender] = useState(true);
+    useTitle('ServiceDetails')
     // console.log(render);
     return (
         <section className="dark:bg-gray-800 dark:text-gray-100">

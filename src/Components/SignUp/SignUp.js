@@ -3,15 +3,18 @@ import { Link } from 'react-router-dom';
 import { setAuthToken } from '../../api/auth';
 import signup from '../../assets/signup.gif'
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import useTitle from '../../Hooks/useTitle';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, profile } = useContext(AuthContext);
+    useTitle('SignUp')
 
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const photo= form.photoURL.value;
         const email = form.email.value;
         const password = form.password.value;
 
@@ -20,6 +23,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                profile(name, photo).
                 //get jwt token
                 setAuthToken(user);
                 form.reset('')
@@ -40,6 +44,12 @@ const SignUp = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" placeholder="Your name" name='name' className="input input-bordered" />
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">PhotoURL</span>
+                            </label>
+                            <input type="photoURL" placeholder="Your PhotoURL" name='photoURL' className="input input-bordered" required/>
                         </div>
                         <div className="form-control">
                             <label className="label">

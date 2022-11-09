@@ -11,6 +11,7 @@ const Review = ({ setRender, name }) => {
         const form = event.target;
         const username = form.name.value;
         const email = user?.email || 'unregistered';
+        const userPhoto = user.photoURL;
         const message = form.message.value;
 
         const review = {
@@ -18,6 +19,7 @@ const Review = ({ setRender, name }) => {
             customer: username,
             email,
             message,
+            userPhoto
         }
 
         fetch('http://localhost:5000/reviews', {
