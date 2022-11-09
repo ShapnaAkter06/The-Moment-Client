@@ -46,19 +46,17 @@ const Review = ({ setRender, name }) => {
             <form onSubmit={handleReview}>
                 <div className='grid grid-cols-1 gap-4 my-12 mx-auto w-1/2'>
                     <h2 className='text-2xl font-bold text-center'>Add Review Here</h2>
-                    <textarea name='message' className="textarea textarea-primary" placeholder="Review My Work"></textarea>
+
                     {
                         user?.uid ?
                             <>
+                                <textarea name='message' className="textarea textarea-primary" placeholder="Review My Work"></textarea>
                                 <div className="form-control mt-6">
                                     <input className='btn btn-primary' type="submit" value="Review" />
                                 </div>
                             </> :
                             <>
                                 <div className='text-center'>
-                                    <div className="form-control my-6">
-                                        <input className='btn btn-primary' type="submit" value="Review" disabled/>
-                                    </div>
                                     <p>Please Login to add a review <Link to='/login' className='text-blue-700 font-bold'>Login</Link> </p>
                                 </div>
                             </>
