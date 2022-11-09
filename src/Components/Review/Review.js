@@ -4,22 +4,21 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Review = ({ setRender, name }) => {
     const { user } = useContext(AuthContext);
-    console.log(user);
 
     const handleReview = (event) => {
         event.preventDefault();
         const form = event.target;
-        const username = form.name.value;
         const email = user?.email || 'unregistered';
-        const userPhoto = user.photoURL;
+        const userPhoto = user?.photoURL;
+        const displayName = user?.displayName;
         const message = form.message.value;
 
         const review = {
             name,
-            customer: username,
             email,
             message,
-            userPhoto
+            userPhoto,
+            displayName
         }
 
         fetch('http://localhost:5000/reviews', {
@@ -46,8 +45,6 @@ const Review = ({ setRender, name }) => {
             <form onSubmit={handleReview}>
                 <div className='grid grid-cols-1 gap-4 my-12 mx-auto w-1/2'>
                     <h2 className='text-2xl font-bold text-center'>Add Review Here</h2>
-                    <input name='name' type="text" placeholder="Full Name" className="input input-bordered input-primary " />
-                    <input name='email' type="text" placeholder="User Email" className="input input-bordered input-primary" defaultValue={user?.email} />
                     <textarea name='message' className="textarea textarea-primary" placeholder="Review My Work"></textarea>
                     {
                         user?.uid ?

@@ -44,7 +44,7 @@ const MyReviews = () => {
                             <th>Name</th>
                             <th>Email ID</th>
                             <th>Service name</th>
-                            <th>Message</th>
+                            <th>Review</th>
                             <th></th>
                         </tr>
                     </thead>

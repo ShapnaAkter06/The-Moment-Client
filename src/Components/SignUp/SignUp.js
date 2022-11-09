@@ -22,7 +22,6 @@ const SignUp = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 profile(name, photo)
                 //get jwt token
                 setAuthToken(user);

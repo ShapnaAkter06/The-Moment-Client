@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const MyReviewsCard = ({ myReview, handleDelete }) => {
-    const { customer, email, message, name, _id } = myReview;
+    const { email, message, name, _id, displayName } = myReview;
     return (
         <tr>
             <th>
@@ -13,7 +13,7 @@ const MyReviewsCard = ({ myReview, handleDelete }) => {
                 </label>
             </th>
             <td>
-                {customer}
+                {displayName}
             </td>
             <td>
                 {email}

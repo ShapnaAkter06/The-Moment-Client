@@ -1,15 +1,15 @@
 import React from 'react';
 
 const ReviewRow = ({ review }) => {
-    const { customer, email, message, name, userPhoto } = review;
+    const { email, message, name, userPhoto, displayName } = review;
     // console.log(review);
     return (
         <tr>
             <td>
-                {customer}
+                {displayName}
             </td>
             <td>
-                <img className='w-20 rounded-3xl' src={userPhoto} alt="" />
+                <img className='w-10 rounded-2xl' src={userPhoto} alt="" />
             </td>
             <td>
                 {email}
