@@ -21,7 +21,7 @@ const Review = ({ setRender, name }) => {
             displayName
         }
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://assignment-11-server-gray.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

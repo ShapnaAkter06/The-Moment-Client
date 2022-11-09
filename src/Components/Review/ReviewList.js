@@ -8,7 +8,7 @@ const ReviewList = ({render,name}) => {
     // console.log(reviews);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews?email=${name}`)
+        fetch(`https://assignment-11-server-gray.vercel.app/reviews?email=${name}`)
             .then(response => response.json())
             .then(data => setReviews(data))
     }, [user?.email, render])

@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
-import MyReviewsCard from './MyReviewsCard';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
+import MyReviewsCard from './MyReviewsCard';
 
 const MyReviews = () => {
     const { user } = useContext(AuthContext)
@@ -10,7 +10,7 @@ const MyReviews = () => {
     useTitle('My Reviews');
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myReviews?email=${user?.email}`)
+        fetch(`https://assignment-11-server-gray.vercel.app/myReviews?email=${user?.email}`)
             .then(response => response.json())
             .then(data => setMyReviews(data))
     }, [myReviews])
@@ -19,7 +19,7 @@ const MyReviews = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Are you sure want to cancel this order?");
         if (proceed) {
-            fetch(`http://localhost:5000/myReviews/${id}`, {
+            fetch(`https://assignment-11-server-gray.vercel.app/myReviews/${id}`, {
                 method: 'DELETE',
             })
                 .then(res => res.json())
