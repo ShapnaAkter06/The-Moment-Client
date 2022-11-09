@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { setAuthToken } from '../../api/auth';
 import login from '../../assets/login.jpg'
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -23,6 +24,9 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                
+                //get jwt token
+                setAuthToken(user)
                 navigate(from, { replace: true });
             })
             .catch(err => console.log(err))

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { setAuthToken } from '../../api/auth';
 import signup from '../../assets/signup.gif'
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -19,6 +20,9 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                //get jwt token
+                setAuthToken(user);
+                form.reset('')
             })
             .catch(err => console.error(err))
     }
