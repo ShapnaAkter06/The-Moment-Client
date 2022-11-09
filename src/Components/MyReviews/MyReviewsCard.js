@@ -7,7 +7,7 @@ const MyReviewsCard = ({ myReview, handleDelete }) => {
         <tr>
             <th>
                 <label>
-                    <button onClick={() => handleDelete(_id)} className="btn btn-ghost">
+                    <button onClick={() => handleDelete(_id)} className="btn btn-error font-bold">
                         X
                     </button>
                 </label>
