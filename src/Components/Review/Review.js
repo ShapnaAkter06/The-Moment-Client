@@ -4,6 +4,7 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Review = ({ setRender, name }) => {
     const { user } = useContext(AuthContext);
+    console.log(user);
 
     const handleReview = (event) => {
         event.preventDefault();
@@ -58,7 +59,7 @@ const Review = ({ setRender, name }) => {
                                     <div className="form-control my-6">
                                         <input className='btn btn-primary' type="submit" value="Review" disabled/>
                                     </div>
-                                    <p>Please Login to add review <Link to='/login' className='text-blue-700 font-bold'>Login</Link> </p>
+                                    <p>Please Login to add a review <Link to='/login' className='text-blue-700 font-bold'>Login</Link> </p>
                                 </div>
                             </>
                     }
