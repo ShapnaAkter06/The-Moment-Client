@@ -12,7 +12,9 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    // update profile
     const profile = (name, photo)=>{
+        console.log(name, photo);
         return updateProfile (auth.currentUser, {displayName: name, photoURL: photo})
     }
 

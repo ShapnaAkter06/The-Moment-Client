@@ -23,7 +23,7 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                profile(name, photo).
+                profile(name, photo)
                 //get jwt token
                 setAuthToken(user);
                 form.reset('')
