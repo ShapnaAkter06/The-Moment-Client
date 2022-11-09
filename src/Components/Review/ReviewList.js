@@ -21,6 +21,7 @@ const ReviewList = ({render,name}) => {
                     <thead>
                         <tr>
                             <th>Name</th>
+                            <th>Reviewer Image</th>
                             <th>Email ID</th>
                             <th>Service name</th>
                             <th>Message</th>

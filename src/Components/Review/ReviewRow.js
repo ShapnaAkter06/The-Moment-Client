@@ -7,7 +7,9 @@ const ReviewRow = ({ review }) => {
         <tr>
             <td>
                 {customer}
-                <img src={userPhoto} alt="" />
+            </td>
+            <td>
+                <img className='w-20 rounded-3xl' src={userPhoto} alt="" />
             </td>
             <td>
                 {email}
