@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
-const Review = ({setRender,name}) => {
+const Review = ({ setRender, name }) => {
     const { user } = useContext(AuthContext);
 
     const handleReview = (event) => {
@@ -28,7 +29,7 @@ const Review = ({setRender,name}) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                setRender((render)=> !render)
+                setRender((render) => !render)
                 if (data.acknowledged) {
                     alert('Review successfully');
                     form.reset('')
@@ -45,9 +46,22 @@ const Review = ({setRender,name}) => {
                     <input name='name' type="text" placeholder="Full Name" className="input input-bordered input-primary " />
                     <input name='email' type="text" placeholder="User Email" className="input input-bordered input-primary" defaultValue={user?.email} />
                     <textarea name='message' className="textarea textarea-primary" placeholder="Review My Work"></textarea>
-                    <div className="form-control mt-6">
-                        <input className='btn btn-primary' type="submit" value="Review" />
-                    </div>
+                    {
+                        user?.uid ?
+                            <>
+                                <div className="form-control mt-6">
+                                    <input className='btn btn-primary' type="submit" value="Review" />
+                                </div>
+                            </> :
+                            <>
+                                <div className='text-center'>
+                                    <div className="form-control my-6">
+                                        <input className='btn btn-primary' type="submit" value="Review" disabled/>
+                                    </div>
+                                    <p>Please Login to add review <Link to='/login' className='text-blue-700 font-bold'>Login</Link> </p>
+                                </div>
+                            </>
+                    }
                 </div>
             </form>
         </div>
