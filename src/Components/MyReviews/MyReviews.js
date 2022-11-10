@@ -51,29 +51,17 @@ const MyReviews = () => {
     return (
         <div>
             {myReviews[0]?._id ? (<>
-                <div className="overflow-x-auto w-full my-12">
+                <div className="my-12">
                     <h2 className='text-2xl font-bold text-center mb-5'>My Review</h2>
-                    <table className="table mx-auto w-4/5 text-center mb-12">
-                        <thead>
-                            <tr>
-                                <th></th>
-                                <th>Name</th>
-                                <th>Email ID</th>
-                                <th>Service name</th>
-                                <th>Review</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                myReviews.map(myReview => <MyReviewsCard
-                                    key={myReview._id}
-                                    myReview={myReview}
-                                    handleDelete={handleDelete}
-                                ></MyReviewsCard>)
-                            }
-                        </tbody>
-                    </table>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 items-center px-12'>
+                        {
+                            myReviews.map(myReview => <MyReviewsCard
+                                key={myReview._id}
+                                myReview={myReview}
+                                handleDelete={handleDelete}
+                            ></MyReviewsCard>)
+                        }
+                    </div>
                 </div>
             </>) : <><h1 className='text-center text-4xl my-12 text-red-700 font-bold'>No review were added</h1></>}
         </div>
