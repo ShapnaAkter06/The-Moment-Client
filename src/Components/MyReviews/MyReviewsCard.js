@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MyReviewsCard = ({ myReview, handleDelete }) => {
     const { email, message, name, _id, displayName } = myReview;
-    console.log(_id);
+    // console.log(_id);
     return (
         <tr>
             <th>
