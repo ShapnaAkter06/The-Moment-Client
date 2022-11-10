@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
-import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import useTitle from '../../Hooks/useTitle';
 import service from '../../assets/service.jpg'
 
