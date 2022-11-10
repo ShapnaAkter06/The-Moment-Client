@@ -23,7 +23,7 @@ const ServiceCard = ({ service }) => {
                     <button
                         type="button"
                         className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md btn btn-primary">
-                        Read more
+                        View Details
                     </button>
                 </Link>
             </div>

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 import ReviewRow from './ReviewRow';
 
-const ReviewList = ({render,name}) => {
+const ReviewList = ({ render, name }) => {
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     // console.log(reviews);
@@ -15,27 +15,14 @@ const ReviewList = ({render,name}) => {
 
     return (
         <div>
-            <div className="overflow-x-auto w-full">
-                <h2 className='text-2xl font-bold text-center mb-5'>Review on my Work</h2>
-                <table className="table mx-auto w-1/2 text-center">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Reviewer Image</th>
-                            <th>Email ID</th>
-                            <th>Service name</th>
-                            <th>Message</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            reviews.map(review => <ReviewRow
-                                key={review._id}
-                                review={review}
-                            ></ReviewRow>)
-                        }
-                    </tbody>
-                </table>
+            <h2 className='text-2xl font-bold text-center mb-5'>Review on my Work</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+                {
+                    reviews.map(review => <ReviewRow
+                        key={review._id}
+                        review={review}
+                    ></ReviewRow>)
+                }
             </div>
         </div>
     );
