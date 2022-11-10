@@ -5,7 +5,7 @@ const MyReviewsCard = ({ myReview, handleDelete }) => {
     const { email, message, name, _id, displayName} = myReview;
     
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card w-full bg-base-100 shadow-xl">
             <div className="card-body">
                 <h2 className="card-title">
                     Service: {name}
