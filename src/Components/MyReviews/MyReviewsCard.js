@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MyReviewsCard = ({ myReview, handleDelete }) => {
     const { email, message, name, _id, displayName } = myReview;
+    console.log(_id);
     return (
         <tr>
             <th>
@@ -25,7 +26,7 @@ const MyReviewsCard = ({ myReview, handleDelete }) => {
                 {message}
             </td>
             <th>
-                <Link to={`/update/${myReview._id}`}>
+                <Link to={`/update/${_id}`}>
                     <button
                         className="btn btn-primary"> Edit Review
                     </button>

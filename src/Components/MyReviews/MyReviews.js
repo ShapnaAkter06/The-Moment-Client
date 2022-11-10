@@ -24,12 +24,17 @@ const MyReviews = () => {
             .then(data => setMyReviews(data))
     }, [user?.email, logOut])
 
+    
+
     // for delete
     const handleDelete = id => {
-        const proceed = window.confirm("Are you sure want to cancel this order?");
+        const proceed = window.confirm("Are you sure want to delete this review?");
         if (proceed) {
             fetch(`https://assignment-11-server-gray.vercel.app/myReviews/${id}`, {
                 method: 'DELETE',
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('the-moment')}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {
@@ -44,7 +49,9 @@ const MyReviews = () => {
     }
 
     return (
-        <div className="overflow-x-auto w-full my-12">
+        <div>
+            {myReviews[0]?._id ? (<>
+                <div className="overflow-x-auto w-full my-12">
             <h2 className='text-2xl font-bold text-center mb-5'>My Review</h2>
             <table className="table mx-auto w-4/5 text-center mb-12">
                 <thead>
@@ -67,6 +74,8 @@ const MyReviews = () => {
                     }
                 </tbody>
             </table>
+        </div>
+            </>) : <><h1 className='text-center text-4xl my-12 text-red-700 font-bold'>No review were added</h1></>}
         </div>
     );
 };
