@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setAuthToken } from '../../api/auth';
 import signup from '../../assets/signup.gif'
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
@@ -8,6 +8,12 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 const SignUp = () => {
     const { createUser, profile } = useContext(AuthContext);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const from = location.state?.from?.pathname || "/";
+
     useTitle('SignUp')
 
     const handleSignUp = event => {
@@ -26,6 +32,7 @@ const SignUp = () => {
                 //get jwt token
                 setAuthToken(user);
                 form.reset('')
+                navigate(from, { replace: true });
             })
             .catch(err => console.error(err))
     }
