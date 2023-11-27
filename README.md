@@ -1,5 +1,5 @@
 ## The Moment
-### Live Link: https://assignment-11-client-a0b66.web.app/
+### Live Link: https://luxury-frangollo-124eaf.netlify.app/
 
 - <p>In the home page there is a service section of the services. if you want to see all the services click on the see all button. it will take you to the services page where you can see all the services</p>
 - <p>If you want to see the details of the services click on the see more button. it will take you to the service details page and show all details of the services</p>
